@@ -1,0 +1,138 @@
+Polimorfismo, Orientação a objeto
+Último Pilar
+Polimorfismo: "Mesma ação, comportamento diferente"
+
+Pode ser de duas vertentes/característica
+
+Polimorfismo de Sobrescrita: Realiza a mesma ação, podendo se comportar diferente (Alterar o método de execucão)
+
+Polimorfismo de Sobrecarga: Altera a assinatura de acordo com a necessidade  
+Assinatura = nome + parâmetros (Sabendo que a assinatura do método é o nome do método + os parâmetros)
+(Altera além do método, os parâmetros)
+
+
+
+Java Project Sobrescrita:
+
+package br.edu.fatecpg.sobrescrita
+
+package br.edu.fatecpg.sobrescrita.model:
+
+Class Main.Java:
+package br.edu.fatecpg.sobrescrita.model;
+import br.edu.fatecpg.sobrescrita.model.Veiculo;
+import br.edu.fatecpg.sobrescrita.model.Bicicleta;
+import br.edu.fatecpg.sobrescrita.model.Carro;
+
+
+public class Main {
+	public static void main(String[] args) {
+
+	//Veiculo veiculo = new Veiculo("Renault");
+	Carro meuCarro = new Carro("Renault", "Logan");
+	Bicicleta bicicleta = new Bicicleta("Caloi", "Preta");
+
+		meuCarro.mover();
+		bicicleta.mover();
+	}
+
+}
+
+Class Veiculo.Java:
+package br.edu.fatecpg.sobrescrita.model;
+import br.edu.fatecpg.sobrescrita.model.Veiculo;
+import br.edu.fatecpg.sobrescrita.model.Bicicleta;
+import br.edu.fatecpg.sobrescrita.model.Carro;
+
+
+public class Main {
+	public static void main(String[] args) {
+
+	//Veiculo veiculo = new Veiculo("Renault");
+		Carro meuCarro = new Carro("Renault", "Logan");
+		Bicicleta bicicleta = new Bicicleta("Caloi", "Preta");
+
+		meuCarro.mover();
+		bicicleta.mover();
+	}
+
+}
+
+Class Carro.Java:
+package br.edu.fatecpg.sobrescrita.model;
+
+public class Carro extends Veiculo{
+	private String modelo; 
+	
+	public Carro(String mrc, String mdl) {
+		super(mrc);
+		this.modelo = mdl;
+	}
+
+	@Override
+	public void mover() {
+		System.out.println("O carro está dirigindo!");
+	}
+}
+
+Class Bicicleta.Java:
+package br.edu.fatecpg.sobrescrita.model;
+
+public class Bicicleta extends Veiculo{
+	private String cor;
+	
+	public Bicicleta(String mrc, String cor){
+		super(mrc);
+		this.cor = cor;
+
+	}
+
+	@Override
+	public void mover() {
+		System.out.println("A Bicicleta está pedalando!");
+	}
+}
+
+
+package br.edu.fatecpg.sobrescrita.view
+
+
+
+Java Project Sobrecarga:
+Package br.edu.fatecpg.sobrecarga
+
+Package br.edu.fatecpg.sobrecarga.model:
+
+Class Main.Java:
+package br.edu.fatecpg.sobrecarga.model;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Calculadora calc = new Calculadora();
+		
+		System.out.println(calc.somar(2,5));
+		System.out.println(calc.somar(2,3,5));
+		System.out.println(calc.somar(2,5,8));
+	}
+	
+}
+
+Class Calculadora.Java:
+package br.edu.fatecpg.sobrecarga.model;
+
+public class Calculadora {
+
+	public int somar(int n1, int n2) {
+		return n1+n2;
+	}
+	public int somar(int n1, int n2, int n3) {
+		return n1+n2+n3;
+	}
+	public double somar(double n1, double n2) {
+		return n1+n2;
+	}
+	
+}
+
+Package br.edu.fatecpg.sobrecarga.view
